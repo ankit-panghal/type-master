@@ -7,7 +7,6 @@ const Modal = () => {
     const {setTime} = useContext(timerContext)
     const [closeModal,setCloseModal] = useState(false)
 
-    console.log('inside modal')
     let redChars = 0
      document.querySelectorAll('.char').forEach(item => {
         if(item.classList.contains('text-red-500')) redChars+=1

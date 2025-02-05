@@ -8,8 +8,8 @@ const Textbox = () => {
     if(text) setStart(true)
    },[text])
   return (
-    <div className="bg-zinc-700 w-2/3 max-h-max p-8 relative text-3xl/10 font-mono text-zinc-400 rounded-lg">
-      <p>
+    <div className="bg-zinc-700 w-full max-h-max p-8 relative rounded-lg">
+      <p style={{wordSpacing : '0.6rem'}} className="text-3xl/12 font-mono text-zinc-400 tracking-wide">
         {
           para.split("").map((char, index) => {
             let color;
@@ -31,7 +31,7 @@ const Textbox = () => {
 
       {/* Hidden textarea for user input */}
       <textarea
-        className="absolute top-0 left-0 resize-none p-8 w-full h-full caret-white text-transparent outline-none"
+        className="absolute top-0 left-0 resize-none p-8 w-full text-3xl/12 h-full tracking-wide caret-white text-transparent outline-none" style={{wordSpacing : '0.6rem'}}
         value={text}
         onChange={(e) => setText(e.target.value)}
         autoFocus
