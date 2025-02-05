@@ -4,12 +4,14 @@ import { textContext } from "../context/textContext";
 
 const Textbox = () => {
  const {text,setText,setStart} =  useContext(textContext)
+ 
   useEffect(() => {
     if(text) setStart(true)
    },[text])
+
   return (
-    <div className="bg-zinc-700 w-full max-h-max p-8 relative rounded-lg">
-      <p style={{wordSpacing : '0.6rem'}} className="text-3xl/12 font-mono text-zinc-400 tracking-wide">
+    <div className="bg-zinc-700 w-full max-h-max relative rounded-lg font-mono text-3xl">
+      <p style={{wordSpacing : '0.25em'}} className=" p-8 pointer-events-none whitespace-pre-wrap break-words leading-relaxed tracking-wide">
         {
           para.split("").map((char, index) => {
             let color;
@@ -31,7 +33,7 @@ const Textbox = () => {
 
       {/* Hidden textarea for user input */}
       <textarea
-        className="absolute top-0 left-0 resize-none p-8 w-full text-3xl/12 h-full tracking-wide caret-white text-transparent outline-none" style={{wordSpacing : '0.6rem'}}
+        className="absolute inset-0 resize-none p-8 w-full text-3xl caret-white text-transparent outline-none tracking-wide leading-relaxed" style={{wordSpacing : '0.25em'}}
         value={text}
         onChange={(e) => setText(e.target.value)}
         autoFocus
